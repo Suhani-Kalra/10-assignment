@@ -1,0 +1,31 @@
+\begin{tikzpicture}[
+        GateCfg/.style={
+            logic gate inputs={normal,normal,normal},
+            draw,
+            scale=1.5 
+        } 
+    ] 
+
+    \draw (-0.5,0)coordinate (A)--++(0:1.5)coordinate (B)--++(90:1.7)coordinate (C)--++(180:1.5)coordinate (D)--cycle;
+    \draw ($(B)!0.2!(C)$)node[left]{$\overline{\mbox{Q}_1}$}--++(0:0.5)node[]{}--++(0:0)node[circ]{}; 
+    \draw ($(A)!0.8!(D)$)node[right]{D$_1$}--++(180:1)node[]{}--++(90:1)node[]{}--++(0:8.5)node[]{}--++(-90:1)node[]{}; 
+    \draw ($(D)!0.5!(A)$)node[]{}--++(-20:0.2)node[]{}--++(-151:0.2)node[]{};
+    \draw ($(D)!0.55!(A)$)node[]{}--++(-180:1)node[above]{Clk}--++(0:0)node[circ]{};
+    \draw ($(D)!0.55!(A)$)node[]{}--++(180:0.5)node[]{}--++(-90:2)node[]{}--++(0:5.5)node[]{}--++(90:2)node[]{};
+    \draw ($(B)!0.8!(C)$)node[left]{Q$_1$}--++(0:0.5)node[]{}--++(0:0)node[circ]{}; 
+    
+    \draw (5,0)coordinate (A)--++(0:1.5)coordinate (B)--++(90:1.7)coordinate (C)--++(180:1.5)coordinate (D)--cycle;
+    \draw ($(A)!0.8!(D)$)node[right]{D$_2$}--++(180:0.5)node[]{};% 
+    \draw ($(D)!0.5!(A)$)node[]{}--++(-20:0.2)node[]{}--++(-151:0.2)node[]{};
+    \draw ($(B)!0.8!(C)$)node[left]{Q}--++(0:0.5)node[]{}; 
+    \draw ($(D)!0.55!(A)$)node[]{}--++(-180:0.5)node[]{}; 
+    
+    %XOR gate
+    \draw (3.7,1.36)node[xor gate US,GateCfg](XOR){};
+    
+    %connections 
+    \draw (XOR.input 1)node[]{}--++(180:1)node[above]{A}--++(0:0)node[circ]{};
+    \draw (XOR.input 2)node[]{}--++(180:0.5)node[]{}--++(-90:0.5)node[below]{S}--++(0:0)node[circ]{};
+    \draw (XOR.output)node[]{}--++(0:0.2)node[]{};
+  
+\end{tikzpicture}

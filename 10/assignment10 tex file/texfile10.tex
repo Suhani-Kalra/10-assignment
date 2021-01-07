@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{rotating}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{circuitikz} 
+\usepackage{float}
+\usepackage{lipsum}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning,shapes.gates.logic.US}
+
+
+
+
+\usepackage{mathtools}
+\usepackage{listings}
+
+
+
+
+
+\title{ASSIGNMENT 10 }
+\author{SUHANI KALRA}
+
+\date{\today} 
+\begin{document}
+
+\maketitle
+
+
+
+
+
+\section{Problem}
+
+
+
+
+\subsection{EC GATE 2014 }
+
+\footnotesize
+ In the given circuit, if A is connected to Q1, the operation of the circuit is according to the state diagram. If XOR is replaced with XNOR, then to get the same operation of the circuit which of the following changes has to be done
+
+\subsection{circuit diagram}
+\subsection{state diagram}
+ \begin{figure}[h]
+  \centering
+  \begin{subfigure}[h]{0.5\textwidth} \scalebox{0.7}{\input{fig}} 
+  \end{subfigure}
+   \hfill
+  \begin{subfigure}[h]{0.4\textwidth} changed to [h]
+    \scalebox{0.6}{\input{state}} 
+  \end{subfigure}
+\end{figure}
+\text
+
+(a) A should be connected to $\overline{\mbox{Q1}}$\\
+
+(b) A should be connected to Q2\\
+
+(c) A should be connected of Q1 and S is replaced $\overline{\mbox{S}}$  to $\overline{\mbox{Q1}}$ 
+
+\newpage
+\large
+
+\section{Solution}
+\subsection{basic solution}
+
+\begin{itemize}
+\item Initially,
+
+ A=Q1 ,
+ D2 = A \oplus S = Q1$\oplus$ S = Q1+ $\overline{\mbox{S}}$Q1
+
+ NOW,\\ XOR GATE is replaced by X-NOR gate\\Let X is unknown \\
+So,\\
+ D2 = S \odot X =\bar{S}\bar{X} + SX \\
+ 
+ \item But Circits before and after must be same.\\So,\\ D2 = Q $\odot$ S =Q1$\oplus$ S\\
+$\overline{\mbox{SX}}$  + SX =$\overline{\mbox{Q1}}$S + $\overline{\mbox{S}}$Q1
+
+\item Then operation does not change.By comparing above, unknown X must be equal to $\overline{\mbox{Q1}}$
+\newline i.e. A must be connected to Q1
+
+\subsection{timing diagrams}
+%\noindent
+% \centering
+ \begin{figure}[H]
+    \centering
+    \scalebox{0.5}{\includegraphics[]{TIMING .pdf}}
+    %\includegraphics[width=0.7\linewidth, height=25cm]{TIMING .pdf}
+    \caption{}
+    \label{}
+\end{figure} 
+
+
+\text to keep Q$_2$ as same as before A=$\overline{\mbox{Q1}}$ and D2 = Q $\odot$ \noindent
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth, height=25cm]{TIMING2 .pdf}
+   \caption{}
+    \label{}
+\end{figure}
+
+
+
+\end{document}
+
